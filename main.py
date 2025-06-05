@@ -8,6 +8,9 @@ from fastapi.responses import JSONResponse
 
 app = FastAPI()
 
+@app.get("/")
+def root():
+    return {"message": "LoopAI Ingestion Service is running 🚀"}
 
 @app.on_event("startup")
 async def start_processing():
